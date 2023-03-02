@@ -28,7 +28,9 @@ ax.set_title('Collision of Two Graphs')
 # Define the initial node positions as numpy arrays
 pos1 = {'a': np.array([0, 0]), 'b': np.array([1, 0]), 'c': np.array([2, 0])}
 pos2 = {'a': np.array([0, 1]), 'b': np.array([1, 1]), 'd': np.array([2, 1])}
-pos = {**pos1, **pos2}
+pos3 = {'a': np.array([0, 1]), 'b': np.array([1, 1]), 'e': np.array([2, 2])}
+pos = {**pos1, **pos2, **pos3}
+print(pos)
 
 
 
@@ -39,6 +41,7 @@ pos = {**pos1, **pos2}
 G = nx.DiGraph()
 G.add_edges_from(G1.edges)
 G.add_edges_from(G2.edges)
+G.add_edges_from(G3.edges)
 nx.draw_networkx(G, pos=pos)
 plt.show()
 
